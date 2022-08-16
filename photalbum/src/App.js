@@ -3,9 +3,9 @@ import {InputformElement} from './FormElements';
 import {TextField} from '@mui/material';
 import {Grid, Card, CardContent, Typography, Button} from '@mui/material';
 import { useDispatch, useSelector} from 'react-redux';
-// import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { DataGrid } from '@mui/x-data-grid';
-import  Reducer from './Reducers';
+import { Reducer } from 'react';
 
 function App() {
   const dispatch = useDispatch();
