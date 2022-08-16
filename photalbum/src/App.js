@@ -9,7 +9,6 @@ import  Reducer from './Reducers';
 
 function App() {
   const dispatch = useDispatch();
-  debugger
   const response = useSelector(state=>state);
   const columns = [
     { field: 'albumId', headerName: 'AlbumID' },
