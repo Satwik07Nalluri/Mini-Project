@@ -1,11 +1,13 @@
 import axios from 'axios';
-import Alldata from './Page1';
-const Reducer = (state={Data},action)=>{
+const Reducer = (state={Data:[]},action)=>{
+    debugger
     switch(action.type)
     {
         case 'GetallalbumData':
-            Alldata();
-            break
+            return axios.all([
+                axios.get('https://jsonplaceholder.typicode.com/photos')])
+              .then(photos=>Object.assign({},state,photos))
+              .catch(err=>{console.log(err)})
         case 'GetData':
             return axios.get('https://jsonplaceholder.typicode.com/photos/3')
             .then(res=>{console.log(res)})

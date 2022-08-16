@@ -3,10 +3,22 @@ import {InputformElement} from './FormElements';
 import {TextField} from '@mui/material';
 import {Grid, Card, CardContent, Typography, Button} from '@mui/material';
 import { useDispatch, useSelector} from 'react-redux';
+// import React, { useState, useEffect } from 'react'
+import { DataGrid } from '@mui/x-data-grid';
+import  Reducer from './Reducers';
 
 function App() {
   const dispatch = useDispatch();
+  debugger
   const response = useSelector(state=>state);
+  const columns = [
+    { field: 'albumId', headerName: 'AlbumID' },
+    { field: 'id', headerName: 'ID'},
+    { field: 'title', headerName: 'title',width:300},
+    { field: 'url', headerName: 'url'},
+    { field: 'thumbnailUrl', headerName: 'thumbnail'}
+    ]
+  console.log(response.data)
   return (
     <div className="App">
       <Grid style={{padding:"50px 5px 0 5px"}}>
@@ -33,6 +45,12 @@ function App() {
       </CardContent>
       </Card>
       </Grid>
+      <div style={{ height: 700, width: '100%' }}>
+      <DataGrid
+      rows={response}
+      columns={columns}
+      pageSize={12}/>
+      </div>
     </div>
   );
 
@@ -41,6 +59,7 @@ function GetallData()
   dispatch({
     type: 'GetallalbumData'
   })
+  
 }
 
 function Get()
@@ -73,3 +92,5 @@ function Add()
 }
 
 export default App;
+
+  
