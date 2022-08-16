@@ -6,7 +6,7 @@ import { useDispatch, useSelector} from 'react-redux';
 
 function App() {
   const dispatch = useDispatch();
-  const response = useSelector(state=>state)
+  const response = useSelector(state=>state);
   return (
     <div className="App">
       <Grid style={{padding:"50px 5px 0 5px"}}>
